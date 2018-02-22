@@ -1,0 +1,20 @@
+install flameshot
+install redshift
+install rofi
+install feh
+install cmus
+install mpsyt
+install i3wm
+install qbittorrent
+install rustup
+install cargo with exa, loc, fd, sk, zou, tldr
+install go with croc piknik, tisp
+
+install dmenu with pango lib for yt search (https://github.com/Cloudef/dmenu-pango-imlib.git)
+
+install simple terminal(st) from source
+install nerd-fonts from source (https://github.com/ryanoasis/nerd-fonts.git
+install tmux-ressurect from source (https://github.com/tmux-plugins/tmux-resurrect.git
+
+
+
