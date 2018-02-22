@@ -16,5 +16,7 @@ install simple terminal(st) from source
 install nerd-fonts from source (https://github.com/ryanoasis/nerd-fonts.git
 install tmux-ressurect from source (https://github.com/tmux-plugins/tmux-resurrect.git
 
+install cdm (console display manager)
+
 
 
