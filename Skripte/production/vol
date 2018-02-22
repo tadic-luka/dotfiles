@@ -1,0 +1,48 @@
+#!/bin/bash
+CURVOL=$(awk -F"[][]" '/dB/ { print $2 }' <(amixer -c 0 sget Master) | grep -oE '[0-9]*')
+UPPER_THRESHOLD=100
+high=69
+low=29
+mojBr=0
+dulj=1500
+MUTED=$(amixer -c 0 sget Master | grep -o -E '\[on\]|\[off\]' | grep -oE 'on|off')
+#function which determines current volume, calculates volume percentage and sets type of icon based on current volume
+ikona() {
+	#get current volume
+	CURVOL=$(awk -F"[][]" '/dB/ { print $2 }' <(amixer -c 0 sget Master) | grep -o '[0-9]*')
+	
+	#calculate percentage
+	#choose icon
+	if [ "$MUTED" == "off" ]; then
+		icon="audio-volume-muted"
+	else
+		{ [[ "$CURVOL" -gt "$high" ]] && icon="audio-volume-high"; } || { [[ "$CURVOL" -gt "$low" ]] && icon="audio-volume-medium"; } || { [[ "$CURVOL" -gt 0 ]] && icon="audio-volume-low"; } || icon="audio-volume-muted"
+	fi
+}
+#function which sends notification on desktop
+ispisi() {
+	ikona
+	[ -f /tmp/.vol ] && mojBr=$(cat /tmp/.vol)
+	echo "muted: $MUTED"
+	echo "roj br: $mojBr"
+	echo "ikonica: $icon"
+	echo $(gdbus call --session --dest org.freedesktop.Notifications --object-path /org/freedesktop/Notifications \
+	--method org.freedesktop.Notifications.Notify 'lukina' "$mojBr" "$icon" "Volume" "$CURVOL" [] "{'value': <int32 $CURVOL>}" 4000 | grep -oE '\<[0-9]*\>') > /tmp/.vol
+}
+#up|down|mute volume?
+case "$1" in
+  U|u|[U,u]p)
+    #check if current vol is already at max and if it is, just stay at that volume
+    [[ "$CURVOL" -ge $UPPER_THRESHOLD ]] && amixer -c 0 sset Master 100% || amixer -c 0 sset Master 5%+ 
+	;;
+  D|d|[D,d]own|[D,d]o)
+    # lowers volume by $PERC %
+    [[ "$CURVOL" -le 0 ]] && exit 0 || amixer -c 0 sset Master 5%- 
+	;;
+  M|m|[M,m]u|[M,m]ute)
+    # mutes the volume entirely
+	amixer -c 0 sset Master toggle  
+	MUTED=$(amixer -c 0 sget Master | grep -o -E '\[on\]|\[off\]' | grep -oE 'on|off')
+	;;
+esac
+ispisi

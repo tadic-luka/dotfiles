@@ -1,0 +1,8 @@
+#!/bin/bash
+a=$(setxkbmap -query | grep layout | cut -d" " -f 6)
+if [ "$a" = "us" ]; then
+	setxkbmap -layout hr
+else
+	setxkbmap -layout us
+fi
+
