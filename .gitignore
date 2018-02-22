@@ -20,3 +20,7 @@ Skripte/
 hubbig*
 bin/
 *.py
+Virtual*
+clion*
+idea*
+pycharm*
