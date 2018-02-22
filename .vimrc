@@ -1,0 +1,221 @@
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'suan/vim-instant-markdown'
+Plugin 'lervag/vimtex'
+Plugin 'majutsushi/tagbar'
+Plugin 'metakirby5/codi.vim'
+Plugin 'w0rp/ale'
+Plugin 'mattn/webapi-vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'rust-lang/rust.vim'
+"Plugin 'scrooloose/syntastic'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'racer-rust/vim-racer'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'c.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'sirver/ultisnips'
+Plugin 'honza/vim-snippets'
+"Plugin 'junegunn/limelight.vim'
+call vundle#end()
+filetype plugin indent on
+filetype plugin on
+
+
+set viminfo=
+set cryptmethod=blowfish2
+set hidden
+set nocompatible
+set scrolloff=3
+set wildmenu
+set foldlevel=99
+"set wildmode=list:longest
+set enc=utf-8
+set fenc=utf-8
+set termencoding=utf-8
+set smartindent
+set ttyfast
+set ruler
+set textwidth=120
+"set t_Co=256
+set foldmethod=indent
+set mouse=a
+set mousehide
+set tabstop=8
+set softtabstop=4
+set backup
+set writebackup
+set relativenumber
+set nocp
+set shiftwidth=4
+set incsearch
+set ignorecase
+set smartcase
+set showmatch
+set hlsearch
+set colorcolumn=120
+set completeopt=longest,menuone,preview
+set comments=sl:/*,mb:\ *,elx:\ */
+set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
+
+"for learning purposes (remove arrow keys)
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+"
+
+"lose help
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+"for faster stuff
+nnoremap ; :
+
+let mapleader=","
+"lose all trailing whitespace
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+let g:EasyMotion_do_mapping = 0 
+let g:racer_cmd = "/home/luka/.cargo/bin/racer"
+
+"Vimtex config
+let g:vimtex_view_method = 'zathura'
+
+"move to split window
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+"better regex search
+nnoremap / /\v
+vnoremap / /\v
+"clear search
+nnoremap <leader><space> :noh<cr>
+"for brackets and stuff
+nnoremap <tab> %
+vnoremap <tab> %
+"find words starting with first two chars
+nmap s <Plug>(easymotion-overwin-f)
+nmap s <Plug>(easymotion-overwin-f2)
+"run make with F3
+nmap <F3> :make<CR>		
+imap <F3> <ESC>:make<CR>
+
+"run make clean with F4
+nmap <F4> :make clean<CR>
+imap <F4> <ESC>:make clean<CR>
+
+call togglebg#map("<F5>")
+
+"backup files
+set backupdir=~/.vim/.backup//
+set directory=~/.vim/.swp//
+set undodir=~/.vim/.undo//
+
+"nerd tree
+nmap <F3> :NERDTreeToggle<CR>
+"hide nerd tree
+imap <F2> <ESC>:NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
+"comments
+nmap <C-c> <Plug>NERDCommenterInvert
+
+"paste to clipboard
+xmap <C-c> "+y<CR>
+"autocmpl on tab 
+"inoremap <expr> <tab> pumvisible() ? "\<C-n>" : "\<C-g>u\<tab>"
+"autocmd Filetype c,cpp,python imap . .<C-x><C-o>
+
+"imap / /<C-x><C-f>
+highlight ColorColumn ctermbg=7
+syntax enable
+syntax on
+
+colorscheme gruvbox
+
+" Makes the background transparent. Leave these out if you're not using a transparent
+" terminal.
+highlight Normal ctermbg=NONE guibg=NONE
+highlight NonText ctermbg=NONE guibg=NONE
+
+set termguicolors
+set background=dark
+
+"YCM complete me settings
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_python_binary_path = '/usr/bin/python3'
+let g:ycmp_min_num_of_chars_for_completion = 1
+"let g:ycm_auto_trigger= 0
+let g:ycm_filetype_whitelist = { 'rust': 1, 'python': 1, 'c': 1}
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar' : 1,
+      \ 'qf' : 1,
+      \ 'notes' : 1,
+      \ 'markdown' : 1,
+      \ 'unite' : 1,
+      \ 'text' : 1,
+      \ 'vimwiki' : 1,
+      \ 'pandoc' : 1,
+      \ 'infolog' : 1,
+      \ 'mail' : 1
+      \}
+let g:ycm_semantic_triggers =  {
+  \   'c' : ['->', '.'],
+  \   'cpp,objcpp' : ['->', '.', '::'],
+  \   'rust' : ['::', '.'],
+  \ }
+let g:ycm_error_symbol = '>>'
+let g:ycm_warning_symbol = '!!'
+let g:ycm_key_list_stop_completion = ['<C-y>']
+let g:ycm_use_ultisnips_completer = 1
+
+"ultisnips settings
+let g:UltiSnipsEditSplit="vertical"
+
+" for completion
+"inoremap <expr> j pumvisible() ? "\<C-n>" : "j"
+"inoremap <expr> k pumvisible() ? "\<C-p>" : "k"
+inoremap <expr> <TAB> pumvisible() ? "<C-R>=UltiSnips#ExpandSnippetOrJump()<cr>"  : "<TAB>"
+
+" Rust settings
+let g:rustfmt_autosave = 1
+let g:rust_clip_command = 'xclip -sel clip'
+
+" Syntastic checker
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:sytastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_rust_checkers = ['cargo rustc']
+" ALE config
+let g:ale_fixers = {
+      \ 'c': ['gcc', 'clang-format'],
+      \ 'rust': ['rustc'],
+      \ 'python': ['flake8'],
+      \ 'bash': ['shellcheck'],
+      \ 'ansible': ['ansible-lint'],
+ \}
+
+" Tagbar config
+nmap <F8> :Tagbar<CR>
+let g:tagbar_autofocus = 1
+let g:tagbar_autoclose = 1
+let g:tagbar_ctags_bin = '/usr/bin/ctags'
+
