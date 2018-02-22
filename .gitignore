@@ -15,3 +15,8 @@ Git/
 Music/
 Pictures/
 WebStorm*/
+.*
+Skripte/
+hubbig*
+bin/
+*.py
