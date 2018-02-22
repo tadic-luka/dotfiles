@@ -1,0 +1,58 @@
+#!/usr/bin/env perl
+#
+use Time::HiRes qw(usleep);
+use Env qw(BLOCK_INSTANCE);
+
+use constant DELAY => 50; # Delay in ms to let network-based players (spotify) reflect new data.
+use constant SPOTIFY_STR => 'spotify';
+
+my @metadata = ();
+my $player_arg = "";
+
+sub buttons {
+  my $method = shift;
+
+  if ($ENV{'BLOCK_BUTTON'} == 1) {
+    # left click, next song
+    system("cmus-remote --next --server /tmp/1000-runtime-dir/cmus-socket");
+  } elsif ($ENV{'BLOCK_BUTTON'} == 2) {
+    # middle click, pause
+    system("cmus-remote --pause --server /tmp/1000-runtime-dir/cmus-socket");
+  } elsif ($ENV{'BLOCK_BUTTON'} == 3) {
+    # right click, prev song
+    system("cmus-remote --prev --server /tmp/1000-runtime-dir/cmus-socket");
+  } elsif ($ENV{'BLOCK_BUTTON'} == 4) {
+    # scroll up, seek 1 sec forward
+    system("cmus-remote --server /tmp/1000-runtime-dir/cmus-socket -k +5");
+  } elsif ($ENV{'BLOCK_BUTTON'} == 5) {
+    # scroll down, seek 1 sec back
+    system("cmus-remote --server /tmp/1000-runtime-dir/cmus-socket -k -5");
+  }
+}
+
+sub cmus {
+  buttons('cmus');
+  my @cmus = split(/^/, qx(cmus-remote -Q --server /tmp/1000-runtime-dir/cmus-socket | sed -n "/^status/,/^file/ p"));
+  if ($? == 0) {
+    my $status = $cmus[0];
+    $status =~ s/^status //;
+    $status =~ s/\n$//;
+    my $name = $cmus[1];
+    if ( $status eq 'playing' ) {
+      $status = "♫";
+    } elsif( $status eq 'paused') {
+      $status = "⏸";
+    } elsif( $status eq 'stopped') {
+      $status = "■";
+    }
+    $name =~ s/\.mp3\n$//;
+    $name =~ s/^file //;
+    $name =~ s/&//;
+    $name =~ s/^.*\///;
+    printf("%s %4.30s\n", $status, $name);
+  }
+
+}
+
+
+cmus;
