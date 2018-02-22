@@ -237,8 +237,8 @@ new_window pixel 0
 # custom keybindings
 #bindsym Print exec /home/luka/Git/simple-C-programs/screenshot/scrshot -f /home/luka/Pictures/screen.jpg
 bindsym Print exec flameshot gui
-bindsym $mod+q exec /home/luka/Skripte/production/lock.sh
-bindsym Mod1+space  exec /home/luka/Skripte/production/keyboard_layout 
+bindsym $mod+q exec ~/Skripte/production/lock.sh
+bindsym Mod1+space  exec ~/Skripte/production/keyboard_layout 
 exec redshift 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/nz.jpg 
 bindsym $mod+d exec "rofi -combi-modi window,run -show combi"
