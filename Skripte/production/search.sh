@@ -1,9 +1,7 @@
 #!/bin/zsh
 search() {
- python3 - <<DOC
+python3 - <<DOC
 from apiclient.discovery import build
-import sys
-import json
 DEVELOPER_KEY = "AIzaSyCPNnQcy4HiTfGnhlhZmneAYugR_Q4P2yc"
 YOUTUBE_API_SERVICE_NAME = "youtube"
 YOUTUBE_API_VERSION = "v3"
