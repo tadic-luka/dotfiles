@@ -1,5 +1,4 @@
 # i3 config file (v4)
-#
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 #
 # This config file uses keycodes (bindsym) and was written for the QWERTY
@@ -128,6 +127,12 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+
+#floating_minimum_size 1368 x 383
+#floating_maximum_size 1920 x 540
+for_window [class="Thunderbird"] move scratchpad
+for_window [class="Thunderbird"] move position 0 0
+for_window [class="Thunderbird"] resize set 50% 50%
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -135,6 +140,13 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+mode "$mode_external" {
+  bindsym l exec xrand --output VGA1 --auto --left-of eDP1
+  bindsym r exec xrand --output VGA1 --auto --right-of eDP1
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+bindsym $mod+Shift+s mode "$mode_external"
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -170,6 +182,8 @@ bindsym $mod+b workspace prev
 
 for_window [title="Snap"] floating enable 
 bindsym $mod+r mode "resize"
+workspace 2 output VGA1
+workspace 3 output VGA1
 # bind raise/lower volume
 # bindsym XF86AudioRaiseVolume exec --no-startup-id "pkill -RTMIN+10 i3blocks"
 # bindsym XF86AudioLowerVolume exec --no-startup-id "pkill -RTMIN+10 i3blocks"
@@ -240,7 +254,7 @@ bindsym Print exec flameshot gui
 bindsym $mod+q exec ~/Skripte/production/lock.sh
 bindsym Mod1+space  exec ~/Skripte/production/keyboard_layout 
 exec redshift 
-exec_always --no-startup-id feh --bg-scale ~/Pictures/nz.jpg 
+exec_always --no-startup-id feh --bg-scale ~/Pictures/nz.jpg  ~/Pictures/nz.jpg
 bindsym $mod+d exec "rofi -combi-modi window,run -show combi"
 bindsym $mod+Shift+d exec --no-startup-id /home/luka/Skripte/production/cmus-rofi.sh
 bindsym $mod+y exec --no-startup-id /home/luka/Skripte/production/dmenu.sh
