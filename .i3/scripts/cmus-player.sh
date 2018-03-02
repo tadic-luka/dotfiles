@@ -11,12 +11,12 @@ buttons() {
       fi
       ;;
     2)
-      # middle click, pause
-      cmus-remote --pause
+      # middle click, stop
+      cmus-remote --stop
       ;;
     3)
-      # right click, prev song
-      cmus-remote --prev
+      # right click, pause song
+      cmus-remote --pause
       ;;
     4)
       # scroll up, next song
@@ -40,10 +40,10 @@ case "$status" in
     status="♫"
     ;;
   "stopped")
-    status="⏸"
+    status="■"
     ;;
   "paused")
-    status="■"
+    status="⏸"
     ;;
 esac
 
