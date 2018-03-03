@@ -251,7 +251,7 @@ new_window pixel 0
 # custom keybindings
 #bindsym Print exec /home/luka/Git/simple-C-programs/screenshot/scrshot -f /home/luka/Pictures/screen.jpg
 bindsym Print exec flameshot gui
-bindsym $mod+q exec ~/Skripte/production/lock.sh
+bindsym $mod+q exec ~/Skripte/production/betterlockscreen -l blur
 bindsym Mod1+space  exec ~/Skripte/production/keyboard_layout 
 exec redshift 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/nz.jpg  ~/Pictures/nz.jpg
