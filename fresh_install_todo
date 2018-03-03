@@ -21,3 +21,4 @@ install cdm (console display manager)
 
 set alternative from vim so that vim with python3 will be used
 xbps-alternatives -g vim -s vim-huge-python3
+install i3lock-color and betterlockscreen from github
