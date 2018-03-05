@@ -168,6 +168,8 @@ set background=dark
 let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_python_binary_path = '/usr/bin/python3'
 let g:ycmp_min_num_of_chars_for_completion = 1
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "let g:ycm_auto_trigger= 0
 let g:ycm_filetype_whitelist = { 'rust': 1, 'python': 1, 'c': 1}
 let g:ycm_filetype_blacklist = {
