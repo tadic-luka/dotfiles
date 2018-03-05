@@ -13,6 +13,7 @@ Plug 'rust-lang/rust.vim'
 "Plug 'scrooloose/syntastic'
 Plug 'altercation/vim-colors-solarized'
 Plug 'racer-rust/vim-racer'
+Plug 'powerline/powerline'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-scripts/c.vim'
@@ -21,12 +22,16 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Valloric/YouCompleteMe', {'for': ['rust', 'python', 'c', 'cpp', 'js', 'java']}
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippetsRust'
+Plug 'ryanoasis/vim-devicons'
 "Plugin 'junegunn/limelight.vim'
 call plug#end()
 filetype plugin indent on
 filetype plugin on
 
 
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+set laststatus=2
+set t_Co=256
 set viminfo=
 set cryptmethod=blowfish2
 set hidden
@@ -36,7 +41,9 @@ set wildmenu
 set foldlevel=99
 "set wildmode=list:longest
 set enc=utf-8
+set encoding=utf8
 set fenc=utf-8
+set guifont=DrodSansMono\ Nerd\ Font\ 11
 set termencoding=utf-8
 set smartindent
 set ttyfast
@@ -62,6 +69,8 @@ set colorcolumn=120
 set completeopt=longest,menuone,preview
 set comments=sl:/*,mb:\ *,elx:\ */
 set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
+set splitbelow
+set splitright
 
 "for learning purposes (remove arrow keys)
 nnoremap <up> <nop>
@@ -125,10 +134,10 @@ set directory=~/.vim/.swp//
 set undodir=~/.vim/.undo//
 
 "nerd tree
-nmap <F3> :NERDTreeToggle<CR>
+nmap <F3> :NERDTreeTabsToggle<CR>
 "hide nerd tree
-imap <F2> <ESC>:NERDTreeToggle<CR>
-map <C-n> :NERDTreeToggle<CR>
+imap <F2> <ESC>:NERDTreeTabsToggle<CR>
+map <C-n> :NERDTreeTabsToggle<CR>
 "comments
 nmap <C-c> <Plug>NERDCommenterInvert
 
@@ -194,15 +203,15 @@ let g:rustfmt_autosave = 1
 let g:rust_clip_command = 'xclip -sel clip'
 
 " Syntastic checker
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 "let g:syntastic_always_populate_loc_list = 1
 "let g:sytastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_rust_checkers = ['cargo rustc']
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_rust_checkers = ['cargo rustc']
 " ALE config
 let g:ale_fixers = {
       \ 'c': ['gcc', 'clang-format'],
@@ -218,3 +227,12 @@ let g:tagbar_autofocus = 1
 let g:tagbar_autoclose = 1
 let g:tagbar_ctags_bin = '/usr/bin/ctags'
 
+" Vim-devicons
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
+let g:DevIconsEnableFolderExtensionPatternMatching = 0
+let g:WebDevIconsOS = 'Linux'
