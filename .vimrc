@@ -18,9 +18,9 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-scripts/c.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', {'for': ['rust', 'python', 'c', 'cpp', 'js']}
 Plug 'sirver/ultisnips'
-Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippetsRust'
 "Plugin 'junegunn/limelight.vim'
 call plug#end()
 filetype plugin indent on
