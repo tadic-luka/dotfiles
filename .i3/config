@@ -257,7 +257,8 @@ exec redshift
 exec_always --no-startup-id feh --bg-scale ~/Pictures/nz.jpg  ~/Pictures/nz.jpg
 bindsym $mod+d exec "rofi -combi-modi window,run -show combi"
 bindsym $mod+Shift+d exec --no-startup-id /home/luka/Skripte/production/cmus-rofi.sh
-bindsym $mod+y exec --no-startup-id /home/luka/Skripte/production/dmenu.sh
+bindsym $mod+y exec --no-startup-id ~/Skripte/production/dmenu.sh
+bindsym $mod+o exec --no-startup-id ~/Skripte/production/open_file.sh
 #exec /home/luka/Skripte/production/con 
 #exec urxvtd -q -o -f 
 #exec skippy-xd --config /home/luka/.config/skippy-xd/skippy-xd.rc --start-daemon &
