@@ -52,6 +52,7 @@ set textwidth=120
 "set t_Co=256
 set foldmethod=indent
 set mouse=a
+nnoremap <space> za
 set mousehide
 set tabstop=8
 set softtabstop=4
