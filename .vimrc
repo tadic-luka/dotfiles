@@ -18,7 +18,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-scripts/c.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'Valloric/YouCompleteMe', {'for': ['rust', 'python', 'c', 'cpp', 'js']}
+Plug 'Valloric/YouCompleteMe', {'for': ['rust', 'python', 'c', 'cpp', 'js', 'java']}
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippetsRust'
 "Plugin 'junegunn/limelight.vim'
