@@ -29,6 +29,7 @@ filetype plugin indent on
 filetype plugin on
 
 
+
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 set laststatus=2
 set t_Co=256
@@ -237,3 +238,13 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:DevIconsEnableFolderExtensionPatternMatching = 0
 let g:WebDevIconsOS = 'Linux'
+
+" for python files
+au BufNewFile,BufRead *.py
+  \set tabstop=4
+  \set softtabstop=4
+  \set shiftwidth=4
+  \set textwidth=79
+  \set expandtab
+  \set autoindent
+  \set fileformat=unix
