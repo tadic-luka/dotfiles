@@ -1,29 +1,28 @@
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'suan/vim-instant-markdown'
-Plugin 'lervag/vimtex'
-Plugin 'majutsushi/tagbar'
-Plugin 'metakirby5/codi.vim'
-Plugin 'w0rp/ale'
-Plugin 'mattn/webapi-vim'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'rust-lang/rust.vim'
-"Plugin 'scrooloose/syntastic'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'racer-rust/vim-racer'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'c.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'sirver/ultisnips'
-Plugin 'honza/vim-snippets'
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+Plug 'tpope/vim-markdown', {'for': 'markdown'}
+Plug 'lervag/vimtex'
+Plug 'majutsushi/tagbar'
+Plug 'metakirby5/codi.vim'
+Plug 'w0rp/ale'
+Plug 'mattn/webapi-vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'rust-lang/rust.vim'
+"Plug 'scrooloose/syntastic'
+Plug 'altercation/vim-colors-solarized'
+Plug 'racer-rust/vim-racer'
+Plug 'scrooloose/nerdcommenter'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'vim-scripts/c.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'Valloric/YouCompleteMe'
+Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
 "Plugin 'junegunn/limelight.vim'
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 filetype plugin on
 
@@ -118,7 +117,7 @@ imap <F3> <ESC>:make<CR>
 nmap <F4> :make clean<CR>
 imap <F4> <ESC>:make clean<CR>
 
-call togglebg#map("<F5>")
+"call togglebg#map("<F5>")
 
 "backup files
 set backupdir=~/.vim/.backup//

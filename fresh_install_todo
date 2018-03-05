@@ -22,3 +22,8 @@ install cdm (console display manager)
 set alternative from vim so that vim with python3 will be used
 xbps-alternatives -g vim -s vim-huge-python3
 install i3lock-color and betterlockscreen from github
+
+use vim with vim-plug plugin for installing other plugins
+howto YouCompleteMe: install via vim-plug and then go to .vim/plugged/ and run install.py --all and then symlink 
+(ln -s /usr/lib/libncursesw.so.5 /usr/lib/libtinfo.so.5)  if libtinfo not found on system (libtinfo is deprecated on
+newer versions on ncurses lib)
