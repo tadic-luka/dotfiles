@@ -251,6 +251,8 @@ au BufNewFile,BufRead *.py
   \set autoindent
   \set fileformat=unix
 
+au FocusLost,WinLeave,BufLeave *  silent! up
+
 au BufNewFile,BufRead *.js, *.html, *.css
   \set tabstop=2
   \set softtabstop=2
