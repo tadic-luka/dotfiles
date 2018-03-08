@@ -29,6 +29,13 @@ filetype plugin indent on
 filetype plugin on
 
 
+function! OpenCurrentAsNewTab()
+  let l:currentPos = getcurpos()
+  tabedit %
+  call setpos(".", l:currentPos)
+endfunction
+nnoremap <C-W>T :call OpenCurrentAsNewTab()<CR>
+nnoremap <C-W>t :tabclose<CR>
 
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 set laststatus=2
