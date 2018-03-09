@@ -49,7 +49,7 @@ while [ "$#" -gt 0 ]; do
         echo 'Please specify phone to connect with kdeconnect'
         exit 1
       fi
-      comm="kdeconnect-cli --share \"\$line\" -n $2"
+      comm="kdeconnect-cli --share \"\$line\" -n $2;sleep 5"
       shift 2
       ;;
   esac
