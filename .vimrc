@@ -10,8 +10,10 @@ Plug 'w0rp/ale'
 Plug 'mattn/webapi-vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'rust-lang/rust.vim'
-"Plug 'scrooloose/syntastic'
+"Plug 'klen/python-mode'
 Plug 'altercation/vim-colors-solarized'
+Plug 'shougo/neocomplete.vim', {'for': ['rust', 'python', 'c', 'cpp', 'js', 'java']}
+
 Plug 'racer-rust/vim-racer'
 Plug 'powerline/powerline'
 Plug 'scrooloose/nerdcommenter'
@@ -19,7 +21,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-scripts/c.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'Valloric/YouCompleteMe', {'for': ['rust', 'python', 'c', 'cpp', 'js', 'java']}
+"Plug 'Valloric/YouCompleteMe', {'for': ['rust', 'python', 'c', 'cpp', 'js', 'java']}
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippetsRust'
 Plug 'ryanoasis/vim-devicons'
@@ -247,6 +249,12 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:DevIconsEnableFolderExtensionPatternMatching = 0
 let g:WebDevIconsOS = 'Linux'
+
+" Neocomplete
+let g:neocomplete#enable_at_startup = 1
+
+" Python mode
+"let g:pymode_python='python3'
 
 " for python files
 au BufNewFile,BufRead *.py
