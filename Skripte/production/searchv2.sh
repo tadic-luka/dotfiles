@@ -18,16 +18,14 @@ yt() {
   done | dmenu -p "Select video: " -is 480x360 -l 11
 }
 handle() {
-  while read -r input; do
-    read -r url < "$1"/"$input"-url
-    rm -rf "$1"
-    printf '%s\n' "$url"
-  done
+  read -r input
+  read -r url <"$1"/"$input"-url
+  rm -rf "$1"
+  printf '%s\n' "$url"
 }
 
 tmp="$(mktemp -d /tmp/"$1"XXX)"
 url="$(yt "$2" "$tmp" "$1" | handle "$tmp")"
 if [ ! -z "$url" ]; then
-  echo "url je $url"
   mpv --fs "$url"
 fi
