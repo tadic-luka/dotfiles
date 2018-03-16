@@ -64,8 +64,6 @@ set foldmethod=indent
 set mouse=a
 nnoremap <space> za
 set mousehide
-set tabstop=8
-set softtabstop=4
 set backup
 set writebackup
 set relativenumber
@@ -79,7 +77,7 @@ set hlsearch
 set colorcolumn=120
 set completeopt=longest,menuone,preview
 set comments=sl:/*,mb:\ *,elx:\ */
-set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
+set tabstop=8 softtabstop=0 noexpandtab shiftwidth=0
 set splitbelow
 set splitright
 
@@ -263,6 +261,15 @@ au BufNewFile,BufRead *.py
   \set shiftwidth=4
   \set textwidth=79
   \set expandtab
+  \set autoindent
+  \set fileformat=unix
+
+au BufNewFile,BufRead *.c
+  \set tabstop=8
+  \set softtabstop=0
+  \set shiftwidth=0
+  \set textwidth=80
+  \set noexpandtab
   \set autoindent
   \set fileformat=unix
 
