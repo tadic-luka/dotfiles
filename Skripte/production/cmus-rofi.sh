@@ -6,4 +6,4 @@
   #pkill -RTMIN+11 i3blocks
 #fi
 
-rofi -matching fuzzy -show play_next -modi play_next:~/Skripte/production/cmus_pick_song.sh,queue:~/Skripte/production/cmus_add_to_queue.sh 
+rofi -show play_next -modi play_next:~/Skripte/production/cmus_pick_song.sh,queue:~/Skripte/production/cmus_add_to_queue.sh 
