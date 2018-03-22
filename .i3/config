@@ -253,7 +253,7 @@ new_window pixel 0
 bindsym Print exec flameshot gui
 bindsym $mod+q exec ~/Skripte/production/betterlockscreen -l blur
 bindsym Mod1+space  exec ~/Skripte/production/keyboard_layout 
-exec redshift 
+#exec redshift 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/nz.jpg  ~/Pictures/nz.jpg
 bindsym $mod+d exec "rofi -combi-modi window,run -show combi"
 bindsym $mod+Shift+d exec --no-startup-id /home/luka/Skripte/production/cmus-rofi.sh
