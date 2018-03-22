@@ -13,7 +13,6 @@ if [ $# -eq 0 ]; then
 	print_list
 else
 	song="$(find_song "$1")"
-	echo "song je $song" > rofi.log
 	cmus-remote -C "player-play $song"
 	pkill -RTMIN+11 i3blocks
 fi
