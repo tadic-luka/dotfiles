@@ -28,23 +28,19 @@ buttons() {
       ;;
     esac
 }
-buttons
-data="$(cmus-remote -Q | sed -n "/^status/,/^file/s/status \(.*\)/\1/p; s/file \(.*\)/\1/p" | tr '\n' ' ')"
-read status file <<< "$data"
-file="$(basename "$file")"
-file="${file%.mp3}"
-file="${file//&}"
-
+data="$(cmus-remote -C 'format_print %{status}^%F}')"
+title="${data#*^}"
+title="${title%.mp3}"
+status="${data%^*}"
 case "$status" in 
-  "playing")
+  ">")
     status="♫"
     ;;
-  "stopped")
+  ".")
     status="■"
     ;;
-  "paused")
+  "|")
     status="⏸"
     ;;
 esac
-
-printf "%s %4.30s\n" "$status" "$file"
+printf "%s %4.30s\n" "$status" "$title"
