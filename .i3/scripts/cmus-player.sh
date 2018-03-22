@@ -29,7 +29,7 @@ buttons() {
     esac
 }
 buttons
-data="$(cmus-remote -C 'format_print %{status}^%F}')"
+data="$(cmus-remote -C 'format_print %{status}^%F')"
 title="${data#*^}"
 title="${title%.mp3}"
 status="${data%^*}"
