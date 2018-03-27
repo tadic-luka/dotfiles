@@ -4,9 +4,12 @@ buttons() {
   case "$BLOCK_BUTTON" in
     1)
       # left click, choose song
-      song="$(xargs -a ~/.config/cmus/lib.pl -d '\n' basename -s .mp3 | rofi -dmenu -i -no-fullscreen  -p "" -m -3 -no-custom -theme-str '#window {anchor:southeast; location: northwest;}' -width 40 -no-custom | grep -f -  ~/.config/cmus/lib.pl)"
+      song="$(cmus-remote -C 'save -l -' | xargs -d '\n' basename -s .mp3 | rofi -dmenu -i -no-fullscreen  -p "" -m -3 -no-custom -theme-str '#window {anchor:southeast; location: northwest;}' -width 40 -no-custom)"
       if [ ! -z "$song" ]; then
-        cmus-remote -C "player-play $song"
+        cmus-remote <<- EOF
+	/$song
+	win-activate
+	EOF
         pkill -RTMIN+11 i3blocks
       fi
       ;;
