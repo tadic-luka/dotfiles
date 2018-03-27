@@ -5,6 +5,7 @@ print_list() {
 }
 if [ $# -gt 0 ]; then
 	cmus-remote <<- EOF
+	view 2
 	/$1
 	win-add-q
 	EOF

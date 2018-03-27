@@ -7,6 +7,7 @@ buttons() {
       song="$(cmus-remote -C 'save -l -' | xargs -d '\n' basename -s .mp3 | rofi -dmenu -i -no-fullscreen  -p "" -m -3 -no-custom -theme-str '#window {anchor:southeast; location: northwest;}' -width 40 -no-custom)"
       if [ ! -z "$song" ]; then
         cmus-remote <<- EOF
+	view 2
 	/$song
 	win-activate
 	EOF

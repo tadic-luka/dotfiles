@@ -10,6 +10,7 @@ if [ $# -eq 0 ]; then
 else
 	# song picked, run it
 	cmus-remote <<- EOF
+	view 2
 	/$1
 	win-activate
 	EOF
