@@ -1,7 +1,6 @@
 filetype off
 call plug#begin('~/.vim/plugged')
 
-Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-markdown', {'for': 'markdown'}
 Plug 'lervag/vimtex'
 Plug 'majutsushi/tagbar'
@@ -255,28 +254,26 @@ let g:neocomplete#enable_at_startup = 1
 "let g:pymode_python='python3'
 
 " for python files
-au BufNewFile,BufRead *.py
-  \set tabstop=4
-  \set softtabstop=4
-  \set shiftwidth=4
-  \set textwidth=79
-  \set expandtab
-  \set autoindent
-  \set fileformat=unix
+autocmd BufNewFile,BufRead *.py 
+			\set tabstop=4 | 
+			\set softtabstop=5 |
+			\set shiftwidth=4 |
+			\set textwidth=80 |
+			\set expandtab |
+			\set autoindent |
+			\set fileformat=unix
 
-au BufNewFile,BufRead *.c
-  \set tabstop=8
-  \set softtabstop=0
-  \set shiftwidth=0
-  \set textwidth=80
-  \set noexpandtab
-  \set autoindent
-  \set fileformat=unix
+au BufNewFile,BufRead *.c set tabstop=8 |
+			\set softtabstop=0 |
+			\set shiftwidth=0 |
+			\set textwidth=80 |
+			\set noexpandtab |
+			\set autoindent |
+			\set fileformat=unix
 
 au FocusLost,WinLeave,BufLeave *  silent! up
 
-au BufNewFile,BufRead *.js, *.html, *.css
-  \set tabstop=2
-  \set softtabstop=2
-  \set shiftwidth=2
+autocmd BufNewFile,BufRead *.{js,html,css} set tabstop=2 |
+			\set softtabstop=2 |
+			\set shiftwidth=2
 
