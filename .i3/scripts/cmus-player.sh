@@ -48,4 +48,4 @@ case "$status" in
     status="⏸"
     ;;
 esac
-printf "%s %4.30s\n" "$status" "$title"
+printf "%s %4.30s\n" "$status" "$title" | sed 's/&/\&amp;/g; s/</\&lt;/g' | iconv -t UTF-8
