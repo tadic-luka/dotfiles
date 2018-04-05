@@ -1,4 +1,4 @@
-export XDG_RUNTIME_DIR='/tmp/1000-runtime-dir'
+export XDG_RUNTIME_DIR='/tmp/user/1000'
 
 print_list() {
 	cmus-remote -C 'save -l -' | xargs -d '\n' basename -s .mp3
