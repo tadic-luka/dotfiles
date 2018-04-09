@@ -67,6 +67,9 @@ export PGDATA=/var/lib/postgresql/data
 export SKIM_DEFAULT_COMMAND="git ls-tree -r --name-only HEAD | rg . || fd -t f"
 export SKIM_DEFAULT_OPTIONS='--preview "cat {}"'
 
+export FZF_DEFAULT_COMMAND="git ls-tree -r --name-only HEAD | rg . || fd -t f"
+export FZF_DEFAULT_OPTS='--preview "cat {}" --bind "f1:execute(view  -u NONE --cmd \"syntax on\" {})"'
+
 
 alias ls="exa"
 export XDG_RUNTIME_DIR=/tmp/user/1000
@@ -74,3 +77,4 @@ alias tb="nc termbin.com 9999"
 alias ctrlc"=xclip -sel clip -i"
 alias ctrlv="xclip -sel clip -o"
 alias up="sudo xbps-install -Syu"
+alias v="vim"
