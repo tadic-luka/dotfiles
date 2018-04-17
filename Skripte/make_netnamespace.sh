@@ -19,3 +19,5 @@ ip netns exec "$1" dhclient "$2"
 # ip netns exec 'namesace name' ping google.com 
 # it will execute command ping google.com inside this namespace
 
+# To remove interface from netns and back to original state
+# ip netns exec "$1" ip link set "$1" netns 1

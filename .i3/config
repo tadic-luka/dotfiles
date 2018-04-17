@@ -133,6 +133,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 for_window [class="Thunderbird"] move scratchpad
 for_window [class="Thunderbird"] move position 0 0
 for_window [class="Thunderbird"] resize set 50% 50%
+for_window [class="Thunderbird"] border pixel 0
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -246,7 +247,7 @@ client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
 client.urgent $red $red $white $red $red
 
 hide_edge_borders vertical
-new_window pixel 0
+default_border pixel 0
 
 # custom keybindings
 #bindsym Print exec /home/luka/Git/simple-C-programs/screenshot/scrshot -f /home/luka/Pictures/screen.jpg
@@ -255,7 +256,7 @@ bindsym $mod+q exec ~/Skripte/production/betterlockscreen -l blur
 bindsym Mod1+space  exec ~/Skripte/production/keyboard_layout 
 #exec redshift 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/nz.jpg  ~/Pictures/nz.jpg
-bindsym $mod+d exec "rofi -combi-modi window,run -show combi"
+bindsym $mod+d exec "rofi -combi-modi window,drun -show combi"
 bindsym $mod+Shift+d exec --no-startup-id /home/luka/Skripte/production/cmus-rofi.sh
 bindsym $mod+y exec --no-startup-id ~/Skripte/production/dmenu.sh
 bindsym $mod+o exec --no-startup-id ~/Skripte/production/open_file.sh
