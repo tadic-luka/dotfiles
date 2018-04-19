@@ -76,5 +76,5 @@ export XDG_RUNTIME_DIR=/tmp/user/1000
 alias tb="nc termbin.com 9999"
 alias ctrlc"=xclip -sel clip -i"
 alias ctrlv="xclip -sel clip -o"
-alias up="sudo xbps-install -Syu"
+alias up="sudo xbps-install -Su"
 alias v="vim"
