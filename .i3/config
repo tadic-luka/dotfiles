@@ -174,7 +174,9 @@ mode "resize" {
 
 # marking windows
 bindsym $mod+i exec i3-input
-bindsym $mod+m exec i3-input -F '[con_mark="%s"] focus' -P 'jump to mark: '
+#bindsym $mod+m exec i3-input -F '[con_mark="%s"] focus' -P 'jump to mark: '
+bindsym $mod+m [title="mpsyt"] scratchpad show
+bindsym $mod+t [title="Thunderbird"] scratchpad show
 
 
 #cycling trough workspaces
