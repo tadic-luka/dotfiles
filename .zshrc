@@ -11,10 +11,12 @@ export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 [[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh
 export TERM=xterm-256color
 source ~/.local/share/icons-in-terminal/icons_bash.sh
+export MOZ_NO_REMOTE=1
 
 
 POWERLEVEL9K_INSTALLATION_PATH=~/.zim/modules/prompt/external-themes/powerlevel9k/powerlevel9k.zsh-theme
 POWERLEVEL9K_MODE='nerdfont-complete'
+export PATH="$PATH:/home/luka/.cargo/bin"
 
 # Prompts
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user dir virtualenv)
@@ -59,7 +61,7 @@ POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
 CASE_SENSITIVE=true
 
 export ZIM_HOME=~/.zim
-export PATH=$PATH:/home/luka/.cargo/bin
+#export PATH=$PATH:/home/luka/.cargo/bin
 export RUST_SRC_PATH=~/.multirust/toolchains/stable_x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
 export SSH_KEY_PATH=~/.ssh/rsa_id
 export HISTORY_SUBSTRING_SEARCH_GLOBBING_FLAGS
@@ -71,10 +73,8 @@ export FZF_DEFAULT_COMMAND="git ls-tree -r --name-only HEAD | rg . || fd -t f"
 export FZF_DEFAULT_OPTS='--preview "cat {}" --bind "f1:execute(view  -u NONE --cmd \"syntax on\" {})"'
 
 
-alias ls="exa"
 export XDG_RUNTIME_DIR=/tmp/user/1000
 alias tb="nc termbin.com 9999"
 alias ctrlc"=xclip -sel clip -i"
 alias ctrlv="xclip -sel clip -o"
 alias up="sudo xbps-install -Su"
-alias v="vim"
