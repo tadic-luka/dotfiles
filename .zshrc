@@ -10,16 +10,16 @@ export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 # Start zim
 [[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh
 export TERM=xterm-256color
-source ~/.local/share/icons-in-terminal/icons_bash.sh
+#source ~/.local/share/icons-in-terminal/icons_bash.sh
 export MOZ_NO_REMOTE=1
 
 
 POWERLEVEL9K_INSTALLATION_PATH=~/.zim/modules/prompt/external-themes/powerlevel9k/powerlevel9k.zsh-theme
 POWERLEVEL9K_MODE='nerdfont-complete'
-export PATH="$PATH:/home/luka/.cargo/bin"
+#export PATH="$PATH:/home/luka/.cargo/bin"
 
 # Prompts
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user dir virtualenv)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user dir virtualenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status os_icon time)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_SHORTEN_DELIMITER=..
@@ -78,3 +78,4 @@ alias tb="nc termbin.com 9999"
 alias ctrlc"=xclip -sel clip -i"
 alias ctrlv="xclip -sel clip -o"
 alias up="sudo xbps-install -Su"
+bindkey -v
