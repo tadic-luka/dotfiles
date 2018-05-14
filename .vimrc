@@ -94,9 +94,9 @@ nnoremap k gk
 "
 
 "lose help
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
+inoremap <F1> <ESC>"=strftime("%b %d, %Y")<CR>P
+nnoremap <F1> "=strftime("%b %d, %Y")<CR>P
+vnoremap <F1> <ESC>"=strftime("%b %d, %Y")<CR>P
 
 "for faster stuff
 nnoremap ; :
