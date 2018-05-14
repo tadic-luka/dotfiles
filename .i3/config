@@ -130,6 +130,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 #floating_minimum_size 1368 x 383
 #floating_maximum_size 1920 x 540
+for_window [class="Zenity"] floating enable
 for_window [class="Thunderbird"] move scratchpad
 for_window [class="Thunderbird"] move position 0 0
 for_window [class="Thunderbird"] resize set 50% 50%
@@ -262,6 +263,7 @@ bindsym $mod+d exec "rofi -combi-modi window,drun -show combi"
 bindsym $mod+Shift+d exec --no-startup-id /home/luka/Skripte/production/cmus-rofi.sh
 bindsym $mod+y exec --no-startup-id ~/Skripte/production/dmenu.sh
 bindsym $mod+o exec --no-startup-id ~/Skripte/production/open_file.sh
+bindsym $mod+p exec --no-startup-id ~/Skripte/passwd_mgr.sh
 #exec /home/luka/Skripte/production/con 
 #exec urxvtd -q -o -f 
 #exec skippy-xd --config /home/luka/.config/skippy-xd/skippy-xd.rc --start-daemon &
