@@ -9,6 +9,7 @@ Plug 'w0rp/ale'
 Plug 'mattn/webapi-vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'rust-lang/rust.vim'
+Plug 'ambv/black'
 "Plug 'klen/python-mode'
 Plug 'altercation/vim-colors-solarized'
 Plug 'shougo/neocomplete.vim', {'for': ['rust', 'python', 'c', 'cpp', 'js', 'java']}
@@ -246,6 +247,10 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:DevIconsEnableFolderExtensionPatternMatching = 0
 let g:WebDevIconsOS = 'Linux'
+
+" Python black
+let g:black_fast = 0
+let g:black_linelength = 88
 
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
