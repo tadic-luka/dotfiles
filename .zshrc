@@ -63,6 +63,7 @@ CASE_SENSITIVE=true
 export ZIM_HOME=~/.zim
 #export PATH=$PATH:/home/luka/.cargo/bin
 export RUST_SRC_PATH=~/.multirust/toolchains/stable_x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
+export RUSTC_WRAPPER='sccache'
 export SSH_KEY_PATH=~/.ssh/rsa_id
 export HISTORY_SUBSTRING_SEARCH_GLOBBING_FLAGS
 export PGDATA=/var/lib/postgresql/data
