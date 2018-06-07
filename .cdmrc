@@ -52,4 +52,3 @@ serverargs=(-nolisten tcp)
 altstartx=1
 
 # Destination for stdout and stderr output from startx.
-startxlog="/home/luka/startxlog"
