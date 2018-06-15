@@ -143,7 +143,7 @@ set directory=~/.vim/.swp//
 set undodir=~/.vim/.undo//
 
 "nerd tree
-nmap <F3> :NERDTreeTabsToggle<CR>
+nmap <F2> :NERDTreeTabsToggle<CR>
 "hide nerd tree
 imap <F2> <ESC>:NERDTreeTabsToggle<CR>
 map <C-n> :NERDTreeTabsToggle<CR>
