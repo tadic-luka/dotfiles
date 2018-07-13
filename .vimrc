@@ -12,7 +12,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'ambv/black'
 "Plug 'klen/python-mode'
 Plug 'altercation/vim-colors-solarized'
-Plug 'shougo/neocomplete.vim', {'for': ['rust', 'python', 'c', 'cpp', 'js', 'java']}
+"Plug 'shougo/neocomplete.vim', {'for': ['rust', 'python', 'c', 'cpp', 'js', 'java']}
 
 Plug 'racer-rust/vim-racer'
 Plug 'powerline/powerline'
@@ -21,7 +21,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-scripts/c.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
-"Plug 'Valloric/YouCompleteMe', {'for': ['rust', 'python', 'c', 'cpp', 'js', 'java']}
+Plug 'Valloric/YouCompleteMe', {'for': ['rust', 'python', 'c', 'cpp', 'js', 'java']}
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippetsRust'
 Plug 'ryanoasis/vim-devicons'
@@ -258,6 +258,11 @@ let g:neocomplete#enable_at_startup = 1
 " Python mode
 "let g:pymode_python='python3'
 
+" for rust files
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap <leader>gd <Plug>(rust-doc)
 " for python files
 autocmd BufNewFile,BufRead *.py 
 			\set tabstop=4 | 
