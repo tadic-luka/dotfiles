@@ -23,7 +23,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Valloric/YouCompleteMe', {'for': ['rust', 'python', 'c', 'cpp', 'js', 'java']}
 Plug 'sirver/ultisnips'
-Plug 'honza/vim-snippetsRust'
+"Plug 'honza/vim-snippetsRust'
 Plug 'ryanoasis/vim-devicons'
 "Plugin 'junegunn/limelight.vim'
 call plug#end()
