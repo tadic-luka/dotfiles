@@ -6,7 +6,7 @@ yt() {
   search_type="$1"
   dirname="$2"
   search_query="$3"
-  search "$search_query" "$search_type" | while {
+  search  "$search_type" "$search_query" | while {
   read -r title
   read -r url
   read -r image
