@@ -210,8 +210,8 @@ bindsym XF86AudioNext exec --no-startup-id "cmus-remote --server /tmp/user/1000/
 bindsym Control+Mod1+z exec --no-startup-id "cmus-remote --server /tmp/user/1000/cmus-socket -r && pkill -RTMIN+11 i3blocks"
 bindsym XF86AudioPrev exec --no-startup-id "cmus-remote --server /tmp/user/1000/cmus-socket -r && pkill -RTMIN+11 i3blocks"
 # bind brightness keys
-# bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +5%
-# bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
 
 bindsym $mod+Tab exec skippy-xd
 
@@ -270,6 +270,7 @@ bindsym $mod+Shift+d exec --no-startup-id /home/luka/Skripte/production/cmus-rof
 bindsym $mod+y exec --no-startup-id ~/Skripte/production/dmenu.sh
 bindsym $mod+o exec --no-startup-id ~/Skripte/production/open_file.sh
 bindsym $mod+p exec --no-startup-id ~/Git/rofi-pass/rofi-pass
+exec ~/Skripte/production/betterlockscreen -l
 #exec /home/luka/Skripte/production/con 
 #exec urxvtd -q -o -f 
 #exec skippy-xd --config /home/luka/.config/skippy-xd/skippy-xd.rc --start-daemon &
