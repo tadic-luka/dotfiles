@@ -34,6 +34,7 @@ set $right semicolon
 floating_modifier $mod
 
 # start a terminal
+#bindsym $mod+Return exec alacritty
 bindsym $mod+Return exec st
 
 # kill focused window
@@ -178,8 +179,8 @@ mode "resize" {
 # marking windows
 bindsym $mod+i exec i3-input
 #bindsym $mod+m exec i3-input -F '[con_mark="%s"] focus' -P 'jump to mark: '
-bindsym $mod+m [title="mpsyt"] scratchpad show
-bindsym $mod+t [title="Thunderbird"] scratchpad show
+# bindsym $mod+m [title="mpsyt"] scratchpad show
+# bindsym $mod+t [title="Thunderbird"] scratchpad show
 
 
 #cycling trough workspaces
@@ -191,12 +192,12 @@ bindsym $mod+r mode "resize"
 workspace 2 output VGA1
 workspace 3 output VGA1
 # bind raise/lower volume
-# bindsym XF86AudioRaiseVolume exec --no-startup-id "pkill -RTMIN+10 i3blocks"
-# bindsym XF86AudioLowerVolume exec --no-startup-id "pkill -RTMIN+10 i3blocks"
-# bindsym XF86AudioMute exec --no-startup-id "pkill -RTMIN+10 i3blocks"
-bindsym Control+Mod1+u exec --no-startup-id  "amixer set Master 5+ && pkill -RTMIN+10 i3blocks"
-bindsym Control+Mod1+d exec  --no-startup-id "amixer set Master 5- && pkill -RTMIN+10 i3blocks"
-bindsym Control+Mod1+m exec  --no-startup-id "amixer  set Master toggle && pkill -RTMIN+10 i3blocks"
+ bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -c1 set Master 5+ && pkill -RTMIN+10 i3blocks"
+ bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -c1 set Master 5- && pkill -RTMIN+10 i3blocks"
+ bindsym XF86AudioMute exec --no-startup-id "amixer -c1  set Master toggle && pkill -RTMIN+10 i3blocks"
+bindsym Control+Mod1+u exec --no-startup-id  "amixer -c1 set Master 5+ && pkill -RTMIN+10 i3blocks"
+bindsym Control+Mod1+d exec  --no-startup-id "amixer -c1 set Master 5- && pkill -RTMIN+10 i3blocks"
+bindsym Control+Mod1+m exec  --no-startup-id "amixer -c1  set Master toggle && pkill -RTMIN+10 i3blocks"
 
 bindsym Control+Mod1+c exec --no-startup-id "cmus-remote --server /tmp/user/1000/cmus-socket -u && pkill -RTMIN+11 i3blocks"
 bindsym XF86AudioPlay exec --no-startup-id "cmus-remote --server /tmp/user/1000/cmus-socket -u && pkill -RTMIN+11 i3blocks"
@@ -267,9 +268,13 @@ bindsym Mod1+space  exec ~/Skripte/production/keyboard_layout
 exec_always --no-startup-id feh --bg-scale ~/Pictures/nz.jpg  ~/Pictures/nz.jpg
 bindsym $mod+d exec "rofi -combi-modi window,drun -show combi"
 bindsym $mod+Shift+d exec --no-startup-id /home/luka/Skripte/production/cmus-rofi.sh
+bindsym $mod+Shift+t exec --no-startup-id /home/luka/Skripte/production/tmux_attach.sh
 bindsym $mod+y exec --no-startup-id ~/Skripte/production/dmenu.sh
-bindsym $mod+o exec --no-startup-id ~/Skripte/production/open_file.sh
-bindsym $mod+p exec --no-startup-id ~/Git/rofi-pass/rofi-pass
+bindsym $mod+o exec --no-startup-id ~/Skripte/production/show_sticky.sh
+bindsym $mod+Shift+o exec --no-startup-id ~/Skripte/production/rofi-surfraw.sh --no-list --no-custom
+#bindsym $mod+p exec --no-startup-id ~/Git/rofi-pass/rofi-pass
+bindsym $mod+m exec --no-startup-id /home/luka/Skripte/production/monitors.sh
+bindsym $mod+p exec --no-startup-id ~/Skripte/production/rofi_virtualbox.sh
 exec ~/Skripte/production/betterlockscreen -l
 #exec /home/luka/Skripte/production/con 
 #exec urxvtd -q -o -f 
