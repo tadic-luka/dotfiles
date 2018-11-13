@@ -1,4 +1,5 @@
 
+KEYTIMEOUT=1
 
 #
 # User configuration sourced by interactive shells
@@ -31,12 +32,11 @@ export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 [[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh
 export TERM=xterm-256color
 #source ~/.local/share/icons-in-terminal/icons_bash.sh
-export MOZ_NO_REMOTE=1
 
 
 POWERLEVEL9K_INSTALLATION_PATH=~/.zim/modules/prompt/external-themes/powerlevel9k/powerlevel9k.zsh-theme
 POWERLEVEL9K_MODE='nerdfont-complete'
-#export PATH="$PATH:/home/luka/.cargo/bin"
+export PATH="/opt/usr/local/bin:$PATH"
 
 # Prompts
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user dir virtualenv vcs)
@@ -70,6 +70,9 @@ POWERLEVEL9K_TIME_FOREGROUND='white'
 POWERLEVEL9K_VIRTUALENV_FOREGROUND='black'
 POWERLEVEL9K_VIRTUALENV_BACKGROUND='cyan'
 # VCS colors
+zstyle ':vcs_info:*' disable-patterns "${HOME}|${HOME}/(Documents(|/[^Rust]*)|Git(|)|Downloads(|/*)|Desktop|Pictures|gdrive|Skripte(|/*)|go(|/*)|.i3(|/*))"
+GIT_PROMPT_EXECUTABLE="haskell"
+ZSH_THEME_GIT_PROMPT_CACHE="true"
 POWERLEVEL9K_VCS_CLEAN_FOREGROUND='black'
 POWERLEVEL9K_VCS_CLEAN_BACKGROUND='green'
 POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='black'
@@ -78,12 +81,12 @@ POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='black'
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
 
 
-CASE_SENSITIVE=true
+CASE_SENSITIVE="true"
 
 export ZIM_HOME=~/.zim
 #export PATH=$PATH:/home/luka/.cargo/bin
 export RUST_SRC_PATH=/home/luka/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/
-export RUSTC_WRAPPER='sccache'
+export RUSTC_WRAPPER=sccache
 export SSH_KEY_PATH=~/.ssh/rsa_id
 export HISTORY_SUBSTRING_SEARCH_GLOBBING_FLAGS
 export PGDATA=/var/lib/postgresql/data
@@ -100,3 +103,18 @@ alias ctrlc"=xclip -sel clip -i"
 alias ctrlv="xclip -sel clip -o"
 alias up="sudo xbps-install -Su"
 bindkey -v
+
+function zle-line-init () { echoti smkx }
+function zle-line-finish () { echoti rmkx }
+zle -N zle-line-init
+zle -N zle-line-finish
+
+function restore () {
+	fg
+}
+zle -N restore
+bindkey -M viins '^R' restore
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/home/luka/.cache/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+

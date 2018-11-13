@@ -14,5 +14,4 @@ else
 	/$1
 	win-activate
 	EOF
-	pkill -RTMIN+11 i3blocks
 fi

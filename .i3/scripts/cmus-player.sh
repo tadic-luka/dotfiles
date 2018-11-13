@@ -37,7 +37,7 @@ buttons() {
 buttons
 data="$(cmus-remote -C 'format_print %{status}^%F')"
 title="${data#*^}"
-title="${title%.mp3}"
+title="${title%.*}"
 status="${data%^*}"
 case "$status" in 
   ">")

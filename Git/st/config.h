@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "FuraCode Nerd Font:pixelsize=13:lcdfilter=lcddefault:antialias=true:autohint=false:hintstyle=hintnone:rgba=rgb";
+static char *font = "FuraCode Nerd Font Mono:pixelsize=13:lcdfilter=lcddefault:antialias=true:autohint=false:hintstyle=hintnone:rgba=rgb";
 static int borderpx = 3;
 
 /*
@@ -168,7 +168,6 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ TERMMOD,              XK_I,           iso14755,       {.i =  0} },
 };
 
 /*

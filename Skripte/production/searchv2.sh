@@ -1,6 +1,6 @@
 #!/bin/zsh
 search() {
-  python3 /home/luka/Documents/Python/youtube_search/main.py "$1" "$2"
+  python3 /home/luka/Documents/Python/youtube_search/test.py "$1" "$2"
 }
 yt() {
   search_type="$1"
@@ -12,7 +12,7 @@ yt() {
   read -r image
   } do
     title="${title%%/*}"
-    curl -s "$image" -o "$dirname"/"$title" &
+    zou -t 4  -o "$dirname"/"$title" "$image" &>/dev/null &
     printf "%s\n" "$url" > "$dirname"/"$title"-url
     printf 'IMG:%s\t%s\n' "$dirname"/"$title" "$title"
   done | dmenu -p "Select video: " -is 480x360 -l 11

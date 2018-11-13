@@ -48,7 +48,7 @@ configuration {
 /*	window-format: "{w}    {i}{c}   {t}";*/
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
-        /*theme: "/usr/share/rofi/themes/gruvbox-dark.rasi";*/
+	/*theme: "/usr/share/rofi/themes/gruvbox-dark.rasi";*/
 	color-normal: "argb:00000000, #FFFFFF, 000000, 000000, #f8ae19" ;
 	color-urgent: "#2f343f, #2f343f, #2f343f, #2f343f, #2f343f";
 	color-active: "argb:00000000, #FFFFFF, argb:00000000, argb:00000000, #f8ae19";
