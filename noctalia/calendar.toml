@@ -1,0 +1,13 @@
+[calendar]
+enabled = true
+refresh_minutes = 15
+
+[calendar.account.home]            # "home" = local account id (lowercase, digits, underscores)
+type = "caldav"
+name = "Calendar"
+provider = "custom"
+server_url = "https://radicale.tadic.dev/"   # discovery ROOT, not a specific calendar URL
+username = "luka"
+calendars = []
+credential_source = "file"
+password_file = "/run/user/1000/noctalia-password-file.toml"

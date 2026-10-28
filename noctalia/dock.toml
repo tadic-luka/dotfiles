@@ -1,0 +1,45 @@
+# Configuration for Noctali adock
+[dock]
+enabled             = true      # set true to activate
+position            = "bottom"   # top | bottom | left | right
+active_monitor_only = false      # when true, only show apps/windows from the active monitor
+
+icon_size           = 48
+main_axis_padding   = 16          # inner padding along the icon row (main axis)
+cross_axis_padding  = 8           # inner padding perpendicular to the icon row
+item_spacing        = 6          # gap between items in pixels
+background_opacity  = 0.88
+border              = "outline_variant"  # color role or #RRGGBB for the dock outline
+border_width        = 0.0        # inside outline width in pixels; 0 disables it
+shadow              = true       # cast the global [shell.shadow]
+radius              = 16
+radius_top_left     = 16         # optional per-corner overrides
+radius_top_right    = 16
+radius_bottom_left  = 16
+radius_bottom_right = 16
+concave_edge_corners = true      # carve the screen-edge corners inward; requires margin_edge = 0
+margin_ends         = 0          # inset from each end of the dock along its main axis
+margin_edge         = 0          # distance from the nearest screen edge (positive values float the dock)
+
+show_running        = true       # also show running apps not in the pinned list
+auto_hide           = true      # slide out when pointer leaves; reveal from edge trigger strip
+smart_auto_hide     = true      # show when the active workspace is empty; hide when it has windows
+reserve_space       = false       # reserve compositor exclusive zone / push windows away
+layer               = "top"      # top | overlay (overlay keeps the dock above fullscreen apps)
+
+active_scale        = 1.0        # icon scale for the focused app (clamped 0.1–1.75)
+inactive_scale      = 0.85       # icon scale for non-focused apps (clamped 0.1–1.0)
+magnification       = true       # magnify icons near the pointer (macOS-style)
+magnification_scale = 1.45       # max scale multiplier at the pointer center (1.0–2.0; 1.0 = off)
+active_opacity      = 1.0
+inactive_opacity    = 0.85
+show_instance_count = true       # badge with window count when an app has 2+ windows
+show_dots           = true      # running-window indicator dots below app icons
+
+launcher_position   = "start"     # none | start | end - optional launcher button on the dock
+launcher_icon       = "grid-dots" # Tabler glyph for the launcher button
+launcher_custom_image          = ""    # image path; overrides launcher_icon when set
+launcher_custom_image_colorize = false # tint the custom image with the icon color
+
+# Desktop entry IDs, StartupWMClass, or human-readable names
+pinned = ["firefox", "org.keepassxc.KeePassXC", "thunderbird"]

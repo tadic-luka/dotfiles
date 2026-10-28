@@ -1,0 +1,60 @@
+[theme]
+mode = "dark"
+source = "builtin"
+builtin = "Gruvbox"
+
+[wallpaper]
+enabled = true
+
+[wallpaper.default]
+path = "/home/luka/Pictures/forest-foggy-misty-cloudy.jpg"
+
+[bar]
+order = ["main"]
+layer = "top"
+display_mode = "smart"
+
+[bar.main]
+position = "top"
+enabled = true
+reserve_space = true
+# Full width, end to end
+margin_ends = 0      # no inset at either end of the bar
+margin_edge = 0      # flush against the screen edge (no floating gap)
+radius = 0           # square corners so it meets the screen edges cleanly
+padding = 14
+widget_spacing = 15
+thickness = 25
+
+# Widget order, left to right
+start  = ["session", "launcher", "workspaces"]
+center = ["media", "keyboard_layout"]
+end    = ["sysmon", "network", "bluetooth", "volume", "battery", "notifications", "privacy", "weather", "clock", "date", "tray"]
+
+[widget.privacy]
+type           = "privacy"
+hide_inactive  = true
+icon_spacing   = 6
+active_color = "error"
+
+
+[widget.network]
+show_label = false
+
+[widget.media]
+hide_when_no_media = true
+
+[widget.sysmon]
+stat = "cpu_temp"
+
+# separate config for other things
+[include]
+files = [
+  "dock.toml",
+]
+
+[shell.screenshot]
+confirm_region = true
+
+[brightness]
+enable_ddcutil = true
